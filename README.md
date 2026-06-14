@@ -6,6 +6,38 @@
 
 ---
 
+## 先看一个对比：同一个需求，裸跑 vs 挂 Skill
+
+需求都是这一句：**「帮我给留学机构做 5 个号的小红书矩阵规划」**
+
+**裸跑 Claude 给你的：**
+
+> 5 个号建议分别做：品牌形象号、学员案例号、干货知识号、海外生活号、顾问人设号。每个号定位一种风格，发对应调性的内容，配 21 天选题，坚持更新涨粉……
+
+看着挺全，问题是：
+
+- 分的是**风格**，不是**词**。5 个号搜索页上谁都没占住
+- "学员案例"和"干货知识"两个号，发着发着就发成一样的了
+- 目标是涨粉，不是降获客成本。客户铺三个月，回来还是那句"内容太重复了"
+
+**挂上 matrix-placement Skill 给你的：**
+
+| 账号 | 主分线 | 主占词组 | 人设 |
+|---|---|---|---|
+| A | 避坑 | 留学中介避坑 / 黑中介识别 / 签证被拒 | 留学过来人 |
+| B | 信任 | 英美名校申请 / 成功案例 / 全程托管 | 资深顾问 |
+| C | 对比 | 留学 vs 国内读研 / 中介 vs 自申 / 港校 vs 英国 | 中立测评 |
+| D | 场景 | 海外生活 / 宿舍开箱 / 校园日常 | 在读学生 |
+| E | 人群 | 大三选校 / 家长陪读 / 二战申请 | 同类学生 |
+
+外加一张**占位覆盖地图**，把"哪些词没人占、哪些词两个号在抢"一眼摆出来，证明 5 个号彼此不撞车。
+
+差别不在文笔，在它占的是**词**不是风格。词面一旦分死，号之间天生不同质化。
+
+这就是 Skill 和 prompt 的区别。prompt 是你每次重新交代一遍，Skill 是把一整套判断固化进去，谁来跑都跑得出同一张表。
+
+---
+
 ## 总 · 用小红书做获客，死在哪里
 
 博主账号和客资账号，目标函数根本不同：
@@ -101,6 +133,25 @@ claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/xhs-content-wri
 
 ---
 
+### Skill 03 · cover-title · 封面标题生成器
+
+```bash
+claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/cover-title
+```
+
+**解决的问题**：封面和标题靠"套公式"做，公式过期了就没用；或者靠焦虑吸引眼球，圈来的不是对的人。
+
+**核心逻辑**：不预设公式，用「发现机制 + 迁移思维」找到当下被市场验证的好结构，再搬进自己行业。三步走：
+1. 看头部博主 + 近 7 天起号最快的博主，找正在跑出来的结构
+2. 判断信号：新出现 × 被高频复用 = 市场在验证它
+3. 拆成内容要素，换成本行业的料，搬进去
+
+**对接 matrix-placement**：分线确定好（L1-L6 哪条线），cover-title 直接按那条线的用户心理出封面标题组合，不用重新定位。
+
+→ 完整文档：[skills/cover-title/SKILL.md](skills/cover-title/SKILL.md)
+
+---
+
 ## 总 · 完整获客工作流
 
 ```
@@ -109,8 +160,11 @@ claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/xhs-content-wri
 matrix-placement
 给多账号分工：A 号占避坑词 / B 号占信任词 / C 号占对比词...
        ↓
+cover-title
+按矩阵分线出封面主文案 + 标题组合
+       ↓
 xhs-content-writing
-给每条线写内容：定位（面孔+开关）→ 下笔（情绪弧线）→ 校对（说人话）
+给每条线写正文：定位（面孔+开关）→ 下笔（情绪弧线）→ 校对（说人话）
        ↓
 发布 · 投流 · 接询盘
 ```
@@ -137,51 +191,35 @@ xhs-content-writing
 
 ---
 
-## 十个 Skill 安装指南
+## Skill 地图
 
-对应小红书文章里的 10 个 Skill，分三层。在 Claude Code 终端里按需安装：
+从一个客户 case 进来，从起号到复盘的整条客资链路。分三层：
 
-**核心层 · 客资骨架**（直接影响获客效率）
+**核心层 · 客资骨架**
 
-```bash
-# 矩阵占位规划师 · 本仓库
-claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/matrix-placement
+| Skill | 干什么 | 状态 | 来源 |
+|---|---|---|---|
+| matrix-placement | 矩阵占位表（含跨平台改写、素材去重） | ✅ 开源可跑 | 本人 |
+| cover-title | 封面标题（对接矩阵分线，高点击不靠焦虑，现查活数据源） | ✅ 开源可跑 | 本人 |
+| 聚光投流复盘 | 投流数据直接给结论，写进禁用词库 | 行业定制 | 本人 |
+| feishu-cli | Obsidian 写好，一行命令变飞书云文档 | 展示 | riba2534 |
+| 马斯克时间管理 | 五连问砍掉不该存在的事，多号提效 | 展示 | alchaincyf |
+| 归因分析（原 ab-test） | 两版选哪个，给决策依据不给感觉 | 展示 | phuryn/pm-skills |
 
-# 获客文案写作引擎 · 本仓库
-claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/xhs-content-writing
+**生产力层 · 话术与认知**
 
-# 飞书推送 · riba2534 出品
-claude skills add github:riba2534/feishu-cli
-
-# 时间管理（马斯克模式）· alchaincyf 出品
-claude skills add github:alchaincyf/elon-musk-skill
-
-# 归因分析（A/B 决策）· phuryn 出品
-claude skills add github:phuryn/pm-skills
-```
-
-聚光投流复盘：内部工具，本仓库暂不开放。
-
-**生产力层 · 选题与设计**
-
-```bash
-# AI 选题简报（AI HOT）· 访问官网按说明安装
-# https://aihot.virxact.com
-
-# 设计出图（huashu-design）· alchaincyf 出品
-claude skills add github:alchaincyf/huashu-design
-```
-
-xhs-content-writing 即 Aria2ever 的开源方法论版，可直接安装。
+| Skill | 干什么 | 状态 | 来源 |
+|---|---|---|---|
+| AI HOT | 30 秒一份 AI 圈简报，客资博主的选题弹药 | 展示 | aihot.virxact.com |
+| 写作分身（Aria2ever） | 见字如面的写作 Skill | 🔓 说人话试用版开源 · 完整版不开源 | 本人 |
+| huashu-design | 把脑子里的想法变成可展示的图/PPT | 可选 | alchaincyf |
 
 **沉淀层 · 让流程自己长**
 
-```bash
-# Skill 自迭代（darwin-skill）· alchaincyf 出品
-claude skills add github:alchaincyf/darwin-skill
-
-# skill-creator：Claude Code 内置，直接输入 /skill-creator 使用，无需安装
-```
+| Skill | 干什么 | 状态 | 来源 |
+|---|---|---|---|
+| skill-creator | 把"搓 Skill"这件事本身做成 Skill | 内置 | Anthropic |
+| darwin-skill | 9 维打分，让 Skill 像模型一样自己迭代 | 展示 | alchaincyf |
 
 ---
 
