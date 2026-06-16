@@ -41,7 +41,7 @@
 ✅ 开源可跑 · 来源：赵赵自研
 
 ```bash
-claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/matrix-placement
+claude skills add github:Aria1ever/Aria-money-come-skill/skills/matrix-placement
 ```
 
 ---
@@ -55,7 +55,7 @@ claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/matrix-placemen
 ✅ 开源可跑 · 来源：赵赵自研
 
 ```bash
-claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/cover-title
+claude skills add github:Aria1ever/Aria-money-come-skill/skills/cover-title
 ```
 
 ---
@@ -69,7 +69,7 @@ claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/cover-title
 ✅ 开源可跑 · 来源：赵赵自研
 
 ```bash
-claude skills add github:Aria1ever/Aria-xhs-growth-skills/skills/xhs-content-writing
+claude skills add github:Aria1ever/Aria-money-come-skill/skills/xhs-content-writing
 ```
 
 ---
