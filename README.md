@@ -2,6 +2,8 @@
 
 > 5 年运营 × 和 Claude 切磋了几个月
 
+![Skill 体系全景图](assets/skill-map.png)
+
 ![小红书获客 Skill 体系一览](assets/skill-overview.png)
 
 ---
