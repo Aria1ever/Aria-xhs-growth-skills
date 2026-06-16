@@ -4,8 +4,6 @@
 
 ![Skill 体系全景图](assets/skill-map.png)
 
-![小红书获客 Skill 体系一览](assets/skill-overview.png)
-
 ---
 
 ## 原始 10 个 Skill · 5 个阶段，从起号到复盘
