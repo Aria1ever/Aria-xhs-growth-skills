@@ -2,9 +2,6 @@
 
 > 5 年运营 × 和 Claude 切磋了几个月
 
-![Uploading 08f93e3b5c4eeed382433ccfd221a774.png…]()
-
-
 ![小红书获客 Skill 体系一览](assets/skill-overview.png)
 
 ---
